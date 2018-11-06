@@ -1,7 +1,7 @@
 /**
  * 
  */
-package es.indra.aerolineas.beans;
+package es.indra.aerolineas.beans.impl;
 
 /**
  * @author josejarizav
@@ -89,5 +89,11 @@ public class Pasajero extends Persona  {
 	}
 
 	public Vuelo[] vuelos;
+
+	@Override
+	public String solicitarInformacion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

@@ -3,10 +3,10 @@
  */
 package es.indra.aerolineas.main;
 
-import es.indra.aerolineas.beans.Aerolinea;
-import es.indra.aerolineas.beans.Pasajero;
-import es.indra.aerolineas.beans.Vuelo;
-import es.indra.aerolineas.beans.Empleado;
+import es.indra.aerolineas.beans.impl.Aerolinea;
+import es.indra.aerolineas.beans.impl.Empleado;
+import es.indra.aerolineas.beans.impl.Pasajero;
+import es.indra.aerolineas.beans.impl.Vuelo;
 
 /**
  * @author josejarizav
@@ -34,6 +34,10 @@ public class Venta {
 		
 		aa.consultarVuelos("MAD");
 		aa.consultarVuelos("MAD", "LIS");
+		
+		aa.anularVuelos();
+		aa.anularVuelos("UX22");
+		aa.anularVuelos("UX34");
 		
 		Empleado emp = new Empleado();
 		emp.setNombre("Vendedor1");
