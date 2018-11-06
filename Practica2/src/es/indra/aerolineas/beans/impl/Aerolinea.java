@@ -51,6 +51,7 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 	/**
 	 * @return the nombre
 	 */
+	@Override
 	public String getNombre() {
 		return nombre;
 	}
@@ -65,6 +66,7 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 	/**
 	 * @return the vuelos
 	 */
+	@Override
 	public Vuelo[] getVuelos() {
 		return vuelos;
 	}
