@@ -16,7 +16,12 @@ public class Vuelo {
 	private String destino;
 	private int numeroPasajeros;
 	private boolean disponible;
+	public String Fecha;
 	
+	
+	public fecha() {
+		
+	}
 	public Vuelo() {
 		
 	}

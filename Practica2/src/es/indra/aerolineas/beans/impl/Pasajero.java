@@ -11,13 +11,6 @@ package es.indra.aerolineas.beans.impl;
 public class Pasajero extends Persona  {
 	
 	
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * @return the nombre
 	 */
