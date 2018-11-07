@@ -52,8 +52,6 @@ public class Venta {
 		p.setNombre("Ariza Valderrama");
 		p.setVuelos(vuelosPasajero);
 		
-		Aerolinea aaa = new List<String>();
-		aaa.consultarVuelos();
 		
 		System.out.println("*************************************************************************");
 		

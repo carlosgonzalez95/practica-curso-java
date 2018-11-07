@@ -3,13 +3,11 @@
  */
 package es.indra.aerolineas.beans.impl;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
+
 //import es.indra.aerolineas.beans.ReadjFile;
 import es.indra.aerolineas.beans.IAerolinea;
+import es.indra.aerolineas.exceptions.ErrorLecturaDeVuelosException;
 import es.indra.aerolineas.services.ReadFile;
 
 
@@ -86,20 +84,33 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 	 * @see es.indra.aerolineas.beans.impl.IAerolinea#consultarVuelos(java.lang.String)
 	 */
 	@Override
-	public void consultarVuelos(String origen) {
+	public void consultarVuelos(String origen) throws ErrorLecturaDeVuelosException {
 		System.out.println("**********************************");
 		System.out.println("**********************************");
-		System.out.println("| Origen de vuelo:".concat(origen));
+	
+		 ReadFile r = new ReadFile();
+	        List<String> lista = r.retornarVuelos();
+	        
+	        if (lista != null && ! lista.isEmpty()) {
+	        	for (String vuelos : lista) {
+	         System.out.println("VUELOS DE HOY:"+ vuelos);
+				}
+				
+			} else {
+
+			}
+	        System.out.printf("| HOY NO HAY VUELOS |");
 	}
+	
+	
 	/* (non-Javadoc)
 	 * @see es.indra.aerolineas.beans.impl.IAerolinea#consultarVuelos(java.lang.String, java.lang.String)
 	 */
 	@Override
 	public void consultarVuelos(String origen, String destino) {
 		System.out.printf("| Origen y destino de vuelo: %s y %s %n", origen, destino);	
-	        ReadFile r = new ReadFile();
-	        List<String> lista = r.retornarVuelos();
-	    System.out.printf("| Origen y destino de vuelos internacionales", lista);
+	     
+	        
 	}
 	
 	/* (non-Javadoc)

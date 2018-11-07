@@ -34,6 +34,21 @@ public class Demo1 {
 		System.out.println(cadena1.equals(cadena2) ?  "Verdadero"  : "Falso"   );
 		
 		System.out.println(cadena1 == cadena2);
+		
+		
+		
+		
+		Limite <Integer> caja1 = new Limite <>();
+		caja1.setT(34);
+		System.out.println("Contenido caja 1:"+ caja1);
+
+		
+		Limite <String> caja2 = new Limite <>();
+		Limite <Integer> caja2String;
+	//	caja2String.setT("Hola");
+	//	System.out.println("Contenido caja 1:"+ caja1);
+		
+		
 
 	}
 
