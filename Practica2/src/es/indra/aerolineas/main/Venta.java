@@ -51,8 +51,12 @@ public class Venta {
 		p.setNombre("Jose Julian");
 		p.setNombre("Ariza Valderrama");
 		p.setVuelos(vuelosPasajero);
-
+		
+		Aerolinea aaa = new List<String>();
+		aaa.consultarVuelos();
+		
 		System.out.println("*************************************************************************");
+		
 
 		System.out.println("|\tBienvenidos a aerolineas ".concat(aa.getNombre()));
 
@@ -60,9 +64,10 @@ public class Venta {
 
 		System.out.printf("|\tTenemos %s vuelos disponibles%n", aa.getVuelos().length);
 
-		System.out.printf("|\t%s, gracias por confiar en nosotros. Tienes %s vuelos comprados %n", p.getNombre(),
-				p.getVuelos().length);
-
+		System.out.printf("|\t%s, gracias por confiar en nosotros. Tienes %s vuelos comprados %n", p.getNombre(), p.getVuelos().length);
+		
+		
+		
 		System.out.println("*************************************************************************");
 
 	}

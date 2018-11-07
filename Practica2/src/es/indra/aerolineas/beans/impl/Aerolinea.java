@@ -3,11 +3,16 @@
  */
 package es.indra.aerolineas.beans.impl;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+//import es.indra.aerolineas.beans.ReadjFile;
 import es.indra.aerolineas.beans.IAerolinea;
+import es.indra.aerolineas.services.ReadFile;
 
-/**
- * @author josejarizav
- */
+
 public class Aerolinea extends Vuelo implements IAerolinea {
 	
 	private int id;
@@ -19,9 +24,7 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 		this.getOrigen();				
 		
 	}
-
 	
-
 	/**
 	 * @param id
 	 * @param nombre
@@ -84,15 +87,19 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 	 */
 	@Override
 	public void consultarVuelos(String origen) {
-		System.out.println("Metodo de  parametros".concat(origen));
+		System.out.println("**********************************");
+		System.out.println("**********************************");
+		System.out.println("| Origen de vuelo:".concat(origen));
 	}
 	/* (non-Javadoc)
 	 * @see es.indra.aerolineas.beans.impl.IAerolinea#consultarVuelos(java.lang.String, java.lang.String)
 	 */
 	@Override
 	public void consultarVuelos(String origen, String destino) {
-		System.out.printf("Metodo de 2 parametros; %s y %s %n", origen, destino);
-	
+		System.out.printf("| Origen y destino de vuelo: %s y %s %n", origen, destino);	
+	        ReadFile r = new ReadFile();
+	        List<String> lista = r.retornarVuelos();
+	    System.out.printf("| Origen y destino de vuelos internacionales", lista);
 	}
 	
 	/* (non-Javadoc)
@@ -100,7 +107,8 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 	 */
 	@Override
 	public void anularVuelos(String... vuelos ) {
-		System.out.println("NUmero de vuelos a anular: "+ vuelos.length);
+		System.out.println("| Numero de vuelos a anular: "+ vuelos.length);
+	
 	}
 
 }

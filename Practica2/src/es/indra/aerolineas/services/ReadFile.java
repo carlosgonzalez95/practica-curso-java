@@ -14,19 +14,26 @@ import java.util.List;
  *
  */
 public class ReadFile {
+	
+	public List<String> retornarVuelos() {
+        Path path = Paths.get("/e:/Proyecto/Repositorio/cursojava/practica-curso-java/vuelos.txt");
 
-	public void retornarVuelos () {
-	Path path =  Paths.get("/Users/P.era-1/repositorios/CursoJava/vuelos.txt");
-	
-	try {
-		List<String> contenido = Files.readAllLines(path);
-		
-		System.out.println(contenido);
-	} catch (IOException e) {
-	
-		e.printStackTrace();
-	}	
-	}
+        List<String> contenido = null;
+
+        try {
+
+            contenido = Files.readAllLines(path);
+            for (String linea : contenido) {
+				System.out.println(linea);
+			}
+            return contenido;
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return contenido;
+
+    }
 	
 	
 public static void main(String[] args) {
