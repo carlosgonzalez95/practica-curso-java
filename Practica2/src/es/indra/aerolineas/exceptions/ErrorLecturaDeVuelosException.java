@@ -7,7 +7,7 @@ public class ErrorLecturaDeVuelosException extends Exception {
 	}
 	
 	
-//
+//comentario
 //	public ErrorLecturaDeVuelosException(String arg0) {
 //		super(arg0);
 //		// TODO Auto-generated constructor stub
