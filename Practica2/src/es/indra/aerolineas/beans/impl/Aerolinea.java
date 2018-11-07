@@ -3,14 +3,20 @@
  */
 package es.indra.aerolineas.beans.impl;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-//import es.indra.aerolineas.beans.ReadjFile;
 import es.indra.aerolineas.beans.IAerolinea;
 import es.indra.aerolineas.exceptions.ErrorLecturaDeVuelosException;
 import es.indra.aerolineas.services.ReadFile;
 
-
+/**
+ * @author Carlos
+ *
+ *
+ */
 public class Aerolinea extends Vuelo implements IAerolinea {
 	
 	private int id;
@@ -84,23 +90,31 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 	 * @see es.indra.aerolineas.beans.impl.IAerolinea#consultarVuelos(java.lang.String)
 	 */
 	@Override
-	public void consultarVuelos(String origen) throws ErrorLecturaDeVuelosException {
-		System.out.println("**********************************");
-		System.out.println("**********************************");
+	public void consultarVuelos(String origen) {
+		
+	System.out.println("**********************************");
+	System.out.println("**********************************");
 	
-		 ReadFile r = new ReadFile();
-	        List<String> lista = r.retornarVuelos();
-	        
-	        if (lista != null && ! lista.isEmpty()) {
-	        	for (String vuelos : lista) {
-	         System.out.println("VUELOS DE HOY:"+ vuelos);
+		 ReadFile leerVuelo = new ReadFile();
+	     List<String> listaVuelos = new ArrayList<String>();
+	     try {
+	    	 
+	     
+	   listaVuelos = leerVuelo.retornarVuelos();
+	       
+	     if (listaVuelos != null && ! listaVuelos.isEmpty()) {
+	        	for (String contenido : listaVuelos) {
+	         System.out.println(contenido);
 				}
 				
-			} else {
-
-			}
-	        System.out.printf("| HOY NO HAY VUELOS |");
+			} else {	
+	        System.out.println("| HOY NO HAY VUELOS |");
+	 	}
+	} catch (ErrorLecturaDeVuelosException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+}
 	
 	
 	/* (non-Javadoc)
@@ -108,6 +122,7 @@ public class Aerolinea extends Vuelo implements IAerolinea {
 	 */
 	@Override
 	public void consultarVuelos(String origen, String destino) {
+		System.out.println("----------------------------------");
 		System.out.printf("| Origen y destino de vuelo: %s y %s %n", origen, destino);	
 	     
 	        
