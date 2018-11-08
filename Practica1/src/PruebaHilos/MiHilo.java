@@ -21,8 +21,7 @@ public class MiHilo implements Runnable{
 	@Override
 	public void run() {
 		System.out.println(hilo.getName()+ "iniciando.");
-		resp = sumA.s
-				umArray(a);
+		resp = sumA.sumArray(a);
 		System.out.println("Suma para" + hilo.getName() + "es:" +resp );
 		System.out.println("hilo" + hilo.getName() + "iniciando.");
 		
