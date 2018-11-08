@@ -19,9 +19,7 @@ public class Vuelo {
 	public String Fecha;
 	
 	
-	public fecha() {
-		
-	}
+	
 	public Vuelo() {
 		
 	}

@@ -26,7 +26,7 @@ public class ReadFile {
 		List<String> vueloshoy = new ArrayList<>();
 		
 	
-        Path path = Paths.get("e:/Proyectos/Repositorio/CursoJava/practica-curso-java/vuelos.txt");
+        Path path = Paths.get("c:/Users/P.era-1/repositorios/practica-curso-java/vuelos.txt");
 
         try {
         	

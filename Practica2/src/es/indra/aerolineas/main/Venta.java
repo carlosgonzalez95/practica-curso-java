@@ -3,7 +3,9 @@
  */
 package es.indra.aerolineas.main;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 import es.indra.aerolineas.beans.IAerolinea;
 import es.indra.aerolineas.beans.impl.Aerolinea;
@@ -26,13 +28,42 @@ public class Venta {
 		}
 		return vuelos;
 	}
+	
+	
+	
+	
+	
 
 	/**
 	 * @param args
 	 * @throws ErrorLecturaDeVuelosException 
 	 */
 	public static void main(String[] args) throws ErrorLecturaDeVuelosException {
+		
+    
+	
+		Scanner scanner = new Scanner (System.in);
+		
+		System.out.print("Introducca su nombre");
+		
+		String nombre = scanner.nextLine();
+		
+		System.out.print("Introducca numero aerolinea");
+		
+		int alinea = scanner.nextInt();
 
+		System.out.print("Introducca precio");
+		
+		double precio = scanner.nextDouble();
+		
+		System.out.print("Nombre: " + nombre);
+		System.out.print("Edad " +alinea);
+		System.out.print("Precio billete " +precio);
+		
+		
+		
+		
+		
 		Vuelo[] vuelos = creaVuelos();
 
 		IAerolinea aa = new Aerolinea(10, "American Airlines", vuelos);
